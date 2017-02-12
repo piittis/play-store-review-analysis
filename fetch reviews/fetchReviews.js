@@ -34,7 +34,7 @@ function getReviews(pageNum) {
 function reviewsFetchCallback(error, response, body) {
     if (!error && response.statusCode == 200) {
 		
-		//json content starts at index 6
+        //json content starts at index 6
         var reviewsHtml = JSON.parse(body.slice(6))[0][2];
 
         if (reviewsHtml.length === 0) {
