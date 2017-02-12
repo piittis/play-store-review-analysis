@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Review search</title>
+    <script src="reviews-array.js"></script>
+    <script src="libs/lodash.js"></script>
+    <script src="libs/vue.js"></script>
+    <script src="libs/elasticlunr.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body>
+
+<div id="app" class="app-container">
+
+	<div class="search-options">
+
+		<div>
+			<input class="search-bar" type="text" placeholder="words to look for" v-model="query" />
+		</div>
+
+		<div>
+			<label>
+                <input type="radio" id="AND" value="AND" v-model="searchConfig.bool">
+                AND
+            </label>
+
+			<label>
+                <input type="radio" id="OR" value="OR" v-model="searchConfig.bool">
+                OR
+            </label>
+
+			<label>
+                <input type="checkbox" id="OR" value="OR" v-model="indexConfig.removeStopWords">
+                Stopword removal
+            </label>
+
+		</div>
+
+		<div>
+			<input type="button" value="bug reports" v-on:click="setQuery('bug fix problem issue defect crash solve')">
+			<input type="button" value="feature requests" v-on:click="setQuery('add please could would hope improve miss need prefer request should suggest want wish')">
+			<input type="button" value="user experiences" v-on:click="setQuery('help support assist when situation')">
+			<input type="button" value="ratings" v-on:click="setQuery('great good nice very cool love hate bad worst')">
+		</div>
+
+
+	</div>
+        <br>
+        search results :
+        <div class="search-results"> 
+            
+            <div v-for="result in searchResults">
+                <p v-html="result.text"></p>   
+            </div>
+
+        </div>
+    </div>
+
+<script src="app.js"></script>
+</body>
+
+</html>
