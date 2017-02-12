@@ -11,4 +11,9 @@ search for things that might be interesting to you as an app developer.
 * /explore_reviews:
     * A small Vue.js app that gives you a simple search UI for the reviews. Search functionality utilizes [Elasticlunr.js](https://github.com/weixsong/elasticlunr.js).
       You can search for whatever you like, or use predefined keywords. Keywords are chosen based on 
-      [research](https://www.google.com "On the automatic classification of app reviews") that suggest they will indicate different review categories pretty decently.
+      [research](https://www.google.com "On the automatic classification of app reviews") that suggest they will indicate different review categories pretty decently. Should work fine upto hundreds of thousands of review texts.
+      
+      
+UI:
+
+![](https://raw.githubusercontent.com/piittis/play-store-review-analysis/master/ui-pic.PNG)
