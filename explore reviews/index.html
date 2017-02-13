@@ -7,7 +7,7 @@
     <script src="libs/lodash.js"></script>
     <script src="libs/vue.js"></script>
     <script src="libs/elasticlunr.js"></script>
-    
+
     <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 
@@ -22,7 +22,7 @@
         </div>
 
         <div>
-        <label>
+            <label>
                 <input type="radio" id="AND" value="AND" v-model="searchConfig.bool">
                 AND
             </label>
@@ -36,7 +36,6 @@
                 <input type="checkbox" id="OR" value="OR" v-model="indexConfig.removeStopWords">
                 Stopword removal
             </label>
-
         </div>
 
         <div>
@@ -46,18 +45,16 @@
             <input type="button" value="ratings" v-on:click="setQuery('great good nice very cool love hate bad worst')">
         </div>
 
-
     </div>
-        <br>
-        search results :
-        <div class="search-results"> 
-            
-            <div v-for="result in searchResults">
-                <p v-html="result.text"></p>
-            </div>
 
+    <br>
+    search results :
+    <div class="search-results"> 
+        <div v-for="result in searchResults">
+            <p v-html="result.text"></p>
         </div>
     </div>
+</div>
 
 <script src="app.js"></script>
 </body>
